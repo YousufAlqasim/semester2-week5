@@ -21,11 +21,15 @@ int main(void){
 	
 	//print results
 	// square of even numbers
-	for(int i=0; i < count; i++){
-		if (numbers[i]%2 ==0);
-			squares[i] = numbers[i]*numbers[i];
-			printf("%d ", squares[i]);
+	for(int i = 0; i < 10; i++) {
+		if (numbers[i]%2 ==0){
+			squares[count] = numbers[i]*numbers[i];
+			count++;
+	}}
+	
+	for(int i = 0; i < count; i++) {
+    	printf("%d ", squares[i]);
 	}
- 
+
     return 0;
 }
