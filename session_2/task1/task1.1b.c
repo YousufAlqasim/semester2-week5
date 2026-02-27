@@ -20,8 +20,11 @@ int main(void){
 	//todo: convert the list comprehension
 	
 	//print results
+	// square of even numbers
 	for(int i=0; i < count; i++){
-	    printf("%d ", squares[i]);
+		if (numbers[i]%2 ==0);
+			squares[i] = numbers[i]*numbers[i];
+			printf("%d ", squares[i]);
 	}
  
     return 0;
