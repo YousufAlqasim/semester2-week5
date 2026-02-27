@@ -9,7 +9,16 @@ int main(void){
  * until 'secure123' is entered.
  */
      char password[50];
-	 
+    char correct[] = "secure123";
+
+do {
+    printf("Enter a password: ");
+    scanf("%s", password);
+    
+} while (strcmp(password, correct) != 0);
+
+printf("Access granted!\n");
+
 	 // compare using strcmp(str1,str2) from week 4
 	 // complete the rest of the code here
 	
