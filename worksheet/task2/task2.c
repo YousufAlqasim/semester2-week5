@@ -8,27 +8,42 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void){
-    long decimal = 0;
+int main(void)
+{
     char hex[9];
+    long decimal = 0;
+    int value;
     int i;
 
     printf("Enter a hexadecimal: ");
     scanf("%8s", hex);
 
-    // Validate hexadecimal digits
-    for(i = 0; i < strlen(hex); i++){
-        if(!isxdigit(hex[i])){ // function to see if each letter is a hex digit or not
+    for(i = 0; i < strlen(hex); i++)
+    {
+        char c = hex[i];
+
+        if(c >= '0' && c <= '9')
+        {
+            value = c - '0';
+        }
+        else if(c >= 'A' && c <= 'F')
+        {
+            value = c - 'A' + 10;
+        }
+        else if(c >= 'a' && c <= 'f')
+        {
+            value = c - 'a' + 10;
+        }
+        else
+        {
             printf("Error: Invalid Hexadecimal\n");
             return 1;
         }
+
+        decimal = decimal * 16 + value;
     }
 
-    // Convert hex to decimal
-    sscanf(hex, "%lx", &decimal); // reading x then converting to long decimal
-
-    // Print result
-    printf("decimal: %ld\n", decimal);
+    printf("%ld\n", decimal);
 
     return 0;
 }
