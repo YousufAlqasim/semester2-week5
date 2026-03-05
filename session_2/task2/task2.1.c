@@ -22,25 +22,17 @@ int main(void) {
     // Use an appropriate loop structure
     
         printf("Enter temperature with scale (e.g., 23.5C or 75F): ");
-        
-        // TODO: Use fgets to read the input
-        
-        // TODO: Remove the newline character from input
-        // Hint: input[strcspn(input, "\n")] = 0;
-        
-        // TODO: Parse the input to extract temperature and scale
-        // Hint: Use sscanf(input, "%f%c", &temperature, &scale);
-        // Advanced: Consider handling input with a degree symbol (°)
-        
-        // TODO: Validate the scale (must be 'C', 'c', 'F', or 'f')
-        // Convert scale to uppercase for easier comparison
-        // Hint: scale = toupper(scale); // toupper() converts 'c' to 'C', 'f' to 'F'
-        // Note: In Python, you'd use string method: scale = scale.upper()
-        
-        // TODO: If input is valid, set valid_input = 1
-        // If invalid, print an error message
-    
-    
+        do {
+            fgets(input,sizeof(input),stdin);
+            input[strcspn(input, "\n")] = 0;
+            int num_scanned = sscanf(input, "%f%c", &temperature, &scale);
+            scale = toupper(scale);
+            valid_input = num_scanned == 2 && (scale =='C'|| scale == 'F');
+
+        } while(valid_input=0);{ 
+        printf("Error wrong format");
+        }
+
     // TODO: Perform conversion based on the input scale
     // - If Celsius, convert to Fahrenheit: F = C * 9/5 + 32
     // - If Fahrenheit, convert to Celsius: C = (F - 32) * 5/9
