@@ -5,6 +5,8 @@
  * Name: Yousuf Alqasim
  * ID: 201985816
  */
+#include <stdio.h>
+#include <string.h>
 
 int main(void){
     long decimal = 0;
